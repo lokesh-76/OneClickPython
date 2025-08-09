@@ -1,62 +1,69 @@
-# Python Installer App 🐍🖥️
+# Python Installer App
 
-This project is a **Windows desktop installer application** that simplifies Python environment setup and client code deployment. It automates Python installation, required packages, background task registration, and system configuration — making it ideal for end-users or client systems.
+This project is a **Windows desktop installer application** that simplifies Python environment setup and client code deployment.  
+It automates Python installation, dependency setup, background task registration, and system configuration — making it suitable for end-users or client systems.
 
-## 💡 Features
+## Features
 
-- ✅ Installs **Python** automatically
-- 📦 Installs dependencies from `requirements.txt`
-- 🚀 Deploys your **client Python script**
-- 🔁 Registers the script to **run at system startup**
-- 🔐 Handles **UAC (User Account Control)** settings
-- 🔄 Reboots system if needed
+- Installs Python automatically
+- Installs dependencies from `requirements.txt`
+- Deploys the client Python script
+- Registers the script to run at system startup
+- Handles User Account Control (UAC) settings
+- Reboots the system if required
 
-## 📁 Project Structure
+## Project Structure
 
+```
 InstallerApk/
 ├── requirements.txt
-├── client_script.py # Your main Python client code
-├── PythonInstaller.cs # Main C# installer logic
+├── client_script.py       # Main Python client code
+├── PythonInstaller.cs     # Main C# installer logic
 ├── Resources/
-│ └── python-3.xx.exe # Embedded Python installer
-└── InstallerApk.exe # Final installer binary
+│   └── python-3.xx.exe    # Embedded Python installer
+└── InstallerApk.exe       # Final installer binary
+```
 
+## How It Works
 
-## 🚀 How It Works
+1. Checks if Python is already installed
+2. Installs Python silently from the embedded installer if not found
+3. Installs dependencies listed in `requirements.txt`
+4. Copies the client script to the target location
+5. Adds a registry key or Task Scheduler entry to run the script at startup
+6. Adjusts permissions and reboots the system if necessary
 
-1. Checks if Python is already installed.
-2. If not, installs it silently from the embedded `.exe`.
-3. Installs dependencies listed in `requirements.txt`.
-4. Copies the client script to a target location.
-5. Adds registry key or Task Scheduler entry to run at startup.
-6. Adjusts permissions and reboots the system (if required).
+## Setup for Development
 
-## 🔧 Setup for Development
+### Prerequisites
 
-### Prerequisites:
-- [Visual Studio](https://visualstudio.microsoft.com/) with **.NET Desktop Development**
-- [.NET Framework](https://dotnet.microsoft.com/) (for WinForms/WPF apps)
+- [Visual Studio](https://visualstudio.microsoft.com/) with **.NET Desktop Development** workload
+- [.NET Framework](https://dotnet.microsoft.com/) (for WinForms/WPF applications)
 - Python executable for embedding
 
-### Building the App:
+### Building the Application
+
 1. Open the solution in Visual Studio
-2. Configure build settings to **Release**
+2. Set build configuration to **Release**
 3. Build the solution
-4. `InstallerApk.exe` will be generated inside the `bin/Release` folder
+4. The output file `InstallerApk.exe` will be located in the `bin/Release` folder
 
-## 📦 Deployment
+## Deployment
 
-To distribute, provide the `InstallerApk.exe` to end-users or upload it under the [Releases](https://github.com/LokeshAdivishnu/python_installer/releases) tab.
+To distribute the application:
 
-## 📌 Notes
+- Provide the `InstallerApk.exe` directly to end-users
+- Alternatively, upload it to the [Releases](https://github.com/LokeshAdivishnu/python_installer/releases) section of the repository
 
-- Do not push `.exe` files directly in Git unless tracked via **Git LFS**
-- For larger distribution, consider packaging with **Inno Setup** or **NSIS**
+## Notes
 
-## 📄 License
+- Avoid pushing `.exe` files directly to Git unless tracked via **Git LFS**
+- For larger distributions, consider packaging the installer with **Inno Setup** or **NSIS**
 
-MIT License — feel free to use and adapt.
+## License
+
+MIT License — free to use and adapt
 
 ---
 
-Made with ❤️ by [Lokesh Adivishnu](https://github.com/LokeshAdivishnu)
+**Created by Lokesh Adivishnu**
