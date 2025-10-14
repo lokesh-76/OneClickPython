@@ -1,4 +1,4 @@
-# Python Installer App
+# OneClickPython - Python Installer Application
 
 This project is a **Windows desktop installer application** that simplifies Python environment setup and client code deployment.  
 It automates Python installation, dependency setup, background task registration, and system configuration — making it suitable for end-users or client systems.
